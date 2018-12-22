@@ -1,0 +1,17 @@
+version: "3.2"
+
+services:
+  vpn:
+    image: kylemanna/openvpn
+    restart: always
+    container_name: vpn
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "${EXPOSED_PORT}:1194/upd"
+    volumes:
+      - "vpn:/etc/openvpn"
+
+volumes:
+  vpn:
+    external: true
