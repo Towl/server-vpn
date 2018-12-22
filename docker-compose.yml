@@ -8,7 +8,7 @@ services:
     cap_add:
       - NET_ADMIN
     ports:
-      - "${EXPOSED_PORT}:1194/upd"
+      - "${EXPOSED_PORT}:1194/udp"
     volumes:
       - "vpn:/etc/openvpn"
 
